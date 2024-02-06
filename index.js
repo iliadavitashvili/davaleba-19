@@ -187,3 +187,35 @@ inputField.addEventListener("submit", function (e) {
   addingUsers();
 });
 addingUsers();
+
+
+const stringChecker = document.getElementById("string-checker")
+const inputText = document.getElementById("input-text")
+function textLengthChecker(inputElement){
+  const textToCheck = new Promise((resolve,reject) =>{
+    if(inputElement.value.length > 10){
+      setTimeout(() => {
+        resolve(inputElement.value)
+      }, 1000);
+    }else{
+      setTimeout(() => {
+        reject("This is async function")
+        
+      }, 1000);
+    }
+  })
+    .then(response =>{
+      inputText.textContent = response
+      inputElement.value = ""
+    })
+    .catch(err =>{
+      inputText.textContent = err
+      inputElement.value = ""
+
+    })
+ 
+}
+stringChecker.addEventListener("submit",(e)=>{
+  e.preventDefault()
+  textLengthChecker(stringChecker.text)
+})
