@@ -196,12 +196,12 @@ function textLengthChecker(inputElement){
     if(inputElement.value.length > 10){
       setTimeout(() => {
         resolve(inputElement.value)
-      }, 1000);
+      }, 5000);
     }else{
       setTimeout(() => {
         reject("This is async function")
         
-      }, 1000);
+      }, 5000);
     }
   })
     .then(response =>{
