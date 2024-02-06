@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+
+tr,td,table{
+    border: 1px solid black;
+}
+
+button{
+    cursor: pointer;
+}
+
+#input-field{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+.modal{
+    display: none;
+}
